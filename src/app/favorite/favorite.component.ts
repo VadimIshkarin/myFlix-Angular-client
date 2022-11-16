@@ -7,14 +7,13 @@ import { SynopsisComponent } from '../synopsis/synopsis.component';
 import { MatDialog } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
-
 @Component({
-  selector: 'app-movie-card',
-  templateUrl: './movie-card.component.html',
-  styleUrls: ['./movie-card.component.scss'],
+  selector: 'app-favorite',
+  templateUrl: './favorite.component.html',
+  styleUrls: ['./favorite.component.scss'],
 })
-export class MovieCardComponent implements OnInit {
-  movies: any[] = [];
+export class FavoriteComponent implements OnInit {
+  // movies: any[] = [];
   favoriteMovies: any[] = [];
   constructor(
     public fetchApiData: FetchApiDataService,
@@ -24,15 +23,25 @@ export class MovieCardComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.getMovies();
     this.getFavoriteMovies();
   }
 
-  getMovies(): void {
-    this.fetchApiData.getAllMovies().subscribe((resp: any) => {
-      this.movies = resp;
-      console.log(this.movies);
-      return this.movies;
+  getFavoriteMovies(): void {
+    this.fetchApiData.getFavoriteMovies().subscribe((resp: any) => {
+      this.favoriteMovies = resp;
+      console.log(this.favoriteMovies);
+      return this.favoriteMovies;
+    });
+  }
+  isFav(id: string): boolean {
+    return this.favoriteMovies.includes(id);
+  }
+
+  removeFromFavoriteMovie(id: string): void {
+    console.log(id);
+    this.fetchApiData.removeFavoriteMovie(id).subscribe((result) => {
+      console.log(result);
+      this.ngOnInit();
     });
   }
   openGenreDialog(name: string, description: string): void {
@@ -61,31 +70,6 @@ export class MovieCardComponent implements OnInit {
         Description: description,
       },
       width: '500px',
-    });
-  }
-  //favorite movies
-  getFavoriteMovies(): void {
-    this.fetchApiData.getFavoriteMovies().subscribe((resp: any) => {
-      this.favoriteMovies = resp;
-      console.log(this.favoriteMovies);
-      return this.favoriteMovies;
-    });
-  }
-  isFav(id: string): boolean {
-    return this.favoriteMovies.includes(id);
-  }
-  addToFavoriteMovie(id: string): void {
-    console.log(id);
-    this.fetchApiData.addFavoriteMovie(id).subscribe((result) => {
-      console.log(result);
-      this.ngOnInit();
-    });
-  }
-  removeFromFavoriteMovie(id: string): void {
-    console.log(id);
-    this.fetchApiData.removeFavoriteMovie(id).subscribe((result) => {
-      console.log(result);
-      this.ngOnInit();
     });
   }
 }

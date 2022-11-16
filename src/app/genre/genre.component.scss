@@ -1,0 +1,39 @@
+$backgroundColor: rgb(202, 212, 220);
+$cardColor: rgb(255, 255, 255);
+$textColor: #272b2e;
+$boxShadowColor: #dee2e6;
+
+.genre-dialog {
+  background-color: $cardColor;
+  margin-top: 0;
+  box-shadow: none;
+}
+
+.genre-dialog-title {
+  color: $textColor;
+}
+
+.genre-dialog-content {
+  color: $textColor;
+}
+
+::ng-deep .genre-custom > mat-dialog-container {
+  background-color: $cardColor;
+}
+
+.genre-close-button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 0;
+  line-height: 14px;
+  min-width: auto;
+  border: none;
+  font-size: 20px;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.genre-close-button:hover {
+  color: rgb(29, 150, 140);
+}

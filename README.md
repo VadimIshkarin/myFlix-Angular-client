@@ -1,3 +1,11 @@
+# MyFlixDB
+
+### Screenshots of the app:
+
+<img src="/img/myflixangulardb.png" alt="Alt text" style="display: inline-block; margin: 0 auto; max-width: 800px">
+
+<img src="/img/myflixangulardb1.png" alt="Alt text" style="display: inline-block; margin: 0 auto; max-width: 800px">
+
 # MyFlixAngularClient
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.9.

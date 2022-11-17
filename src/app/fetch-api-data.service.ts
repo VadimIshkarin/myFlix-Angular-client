@@ -50,7 +50,7 @@ export class FetchApiDataService {
   }
 
   //Get one movie
-  getMovies(Title: any): Observable<any> {
+  getMovies(Title: string): Observable<any> {
     const token = localStorage.getItem('token');
 
     return this.http
@@ -109,31 +109,35 @@ export class FetchApiDataService {
   //
   //
   //FAVORITE MOVIES __________________________________________________________________MOVIES FOAVORITE
+  //Get favorite movie
+  // getFavoriteMovies(): Observable<any> {
+  //   // Get Authorization token stored in local storage
+  //   const token = localStorage.getItem('token');
+  //   // Get Username stored in local storage
+  //   const username = localStorage.getItem('user');
+  //   return this.http
+  //     .get(`${apiUrl}users/${username}/movies`, {
+  //       headers: new HttpHeaders({
+  //         Authorization: 'Bearer ' + token,
+  //       }),
+  //     })
+  //     .pipe(map(this.extractResponseData), catchError(this.handleError));
+  // }
   //Add a movie to favorite Movies
-  addFavoriteMovie(movieID: any): Observable<any> {
+  addFavoriteMovie(movieID: string): Observable<any> {
     const token = localStorage.getItem('token');
     // Get username from localStorage for URLs
-    const username = localStorage.getItem('username');
+    const username = localStorage.getItem('user');
     return this.http
-      .post(`${apiUrl}users/${username}/movies/${movieID}`, {
-        headers: new HttpHeaders({
-          Authorization: 'Bearer ' + token,
-        }),
-      })
-      .pipe(map(this.extractResponseData), catchError(this.handleError));
-  }
-  //Get favorite movie
-  getFavoriteMovies(): Observable<any> {
-    // Get Authorization token stored in local storage
-    const token = localStorage.getItem('token');
-    // Get Username stored in local storage
-    const username = localStorage.getItem('username');
-    return this.http
-      .get(`${apiUrl}users/${username}/movies`, {
-        headers: new HttpHeaders({
-          Authorization: 'Bearer ' + token,
-        }),
-      })
+      .post(
+        `${apiUrl}users/${username}/movies/${movieID}`,
+        { FavoriteMovie: movieID },
+        {
+          headers: new HttpHeaders({
+            Authorization: 'Bearer ' + token,
+          }),
+        }
+      )
       .pipe(map(this.extractResponseData), catchError(this.handleError));
   }
   //Delete a movie from the favorite movies list

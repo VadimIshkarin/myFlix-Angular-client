@@ -46,16 +46,16 @@
       <!-- Add or remove favorite movies button -->
       <button
         mat-button
-        *ngIf="!isFav(movie._id)"
-        (click)="addToFavoriteMovie(movie._id)"
+        *ngIf="!isFavorite(movie._id)"
+        (click)="addToFavorites(movie._id)"
         color="primary"
       >
         <mat-icon>favorite_border</mat-icon>
       </button>
       <button
         mat-button
-        *ngIf="isFav(movie._id)"
-        (click)="removeFromFavoriteMovie(movie._id)"
+        *ngIf="isFavorite(movie._id)"
+        (click)="removeFromFavorites(movie._id)"
         color="primary"
       >
         <mat-icon>favorite</mat-icon>

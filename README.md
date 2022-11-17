@@ -1,4 +1,6 @@
-# MyFlixAngularDB
+# MyFlixAngularDB Link:
+
+https://vadimishkarin.github.io/myFlix-Angular-client/
 
 ### Screenshots of the app:
 

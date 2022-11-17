@@ -171,7 +171,7 @@ export class FetchApiDataService {
       );
     }
     return throwError(
-      () => new Error('ERROR, you ned to fix smth; please try again later.')
+      () => new Error('ERROR, you need to fix smth; please try again later.')
     );
   }
 }

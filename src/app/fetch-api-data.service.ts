@@ -101,28 +101,7 @@ export class FetchApiDataService {
       })
       .pipe(map(this.extractResponseData), catchError(this.handleError));
   }
-  //
-  //
-  //
-  //
-  //
-  //
-  //
-  //FAVORITE MOVIES __________________________________________________________________MOVIES FOAVORITE
-  //Get favorite movie
-  // getFavoriteMovies(): Observable<any> {
-  //   // Get Authorization token stored in local storage
-  //   const token = localStorage.getItem('token');
-  //   // Get Username stored in local storage
-  //   const username = localStorage.getItem('user');
-  //   return this.http
-  //     .get(`${apiUrl}users/${username}/movies`, {
-  //       headers: new HttpHeaders({
-  //         Authorization: 'Bearer ' + token,
-  //       }),
-  //     })
-  //     .pipe(map(this.extractResponseData), catchError(this.handleError));
-  // }
+
   //Add a movie to favorite Movies
   addFavoriteMovie(movieID: string): Observable<any> {
     const token = localStorage.getItem('token');
@@ -153,18 +132,6 @@ export class FetchApiDataService {
       })
       .pipe(map(this.extractResponseData), catchError(this.handleError));
   }
-  //____________________________________________________________________________
-  //
-  //
-  //
-  //
-  //
-  //
-  //
-  //
-  //
-  //
-  //
   //Edit user
   editUser(updateDetails: any): Observable<any> {
     const token = localStorage.getItem('token');
@@ -176,7 +143,6 @@ export class FetchApiDataService {
       }),
     });
   }
-
   //delete user
   deleteUser(): Observable<any> {
     const token = localStorage.getItem('token');
@@ -205,7 +171,7 @@ export class FetchApiDataService {
       );
     }
     return throwError(
-      () => new Error('Something bad happened; please try gagin later.')
+      () => new Error('ERROR, you ned to fix smth; please try again later.')
     );
   }
 }

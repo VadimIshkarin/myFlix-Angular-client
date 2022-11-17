@@ -1,10 +1,10 @@
-# MyFlixDB
+# MyFlixAngularDB
 
 ### Screenshots of the app:
 
-<img src="/img/myflixangulardb.png" alt="Alt text" style="display: inline-block; margin: 0 auto; max-width: 800px">
+<img src="src/img/myflixangulardb.png" alt="Alt text" style="display: inline-block; margin: 0 auto; max-width: 800px">
 
-<img src="/img/myflixangulardb1.png" alt="Alt text" style="display: inline-block; margin: 0 auto; max-width: 800px">
+<img src="src/img/myflixangulardb1.png" alt="Alt text" style="display: inline-block; margin: 0 auto; max-width: 800px">
 
 # MyFlixAngularClient
 

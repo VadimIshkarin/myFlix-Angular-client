@@ -1,12 +1,25 @@
-# MyFlixAngularDB Link:
+# MyFlixAngularDB App Link:
 
 https://vadimishkarin.github.io/myFlix-Angular-client/
+
+## Technologies used
+
+TypeScript, Angular, TypeDoc
 
 ### Screenshots of the app:
 
 <img src="src/img/myflixangulardb.png" alt="Alt text" style="display: inline-block; margin: 0 auto; max-width: 800px">
 
 <img src="src/img/myflixangulardb1.png" alt="Alt text" style="display: inline-block; margin: 0 auto; max-width: 800px">
+
+## Key features
+
+- The app displays a welcome view where users can login or sign up.
+- Once logged in, the movie view will be shown, which contains a list of all the movies.
+- Upon clicking different buttons (synopsis, genre and director) on a particular movie, corresponding information dialog will be shown.
+- User can add each movie into the favorite movies list by clicking the heart-shaped button.
+- User can remove each movie from the favorite movies list by clicking the heart-shaped button.
+- User can navigate to the profile view through navbar where user can update the profile info or delete the account.
 
 # MyFlixAngularClient
 
